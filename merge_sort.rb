@@ -1,12 +1,18 @@
 def merge_sort(array, new_array)
 
-  return array if array.size < 2
+  return if array.size < 2
   
-  new_array = array[0...array.size/2]
-  temp = array[array.size/2..array.size]
-  p temp
-  new_array
+  temp1 = array[0...array.size/2]
+  temp2 = array[array.size/2..array.size]
 
+  p temp1
+  p temp2
+  
+  merge_sort(temp1, new_array)
+
+  #p new_array
 end
 
-p merge_sort([2, 3, 4, 5, 1, 7, 6, 9, 10, 6, 4], [])
+merge_sort([5, 3, 4, 2, 7, 1, 6, 9, 10, 6, 4], [])
+
+#this divides the left half down to 1 element each. Still need to merge
